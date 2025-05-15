@@ -131,7 +131,6 @@ class World:
 
 fn main():
     # ... (previous initialization code)
-    
     # Create world with name
     let world_name = "my_world"
     let world = World(world_name)
