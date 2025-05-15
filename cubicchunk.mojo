@@ -109,6 +109,7 @@ class World:
         let chunk_z = world_z // CHUNK_SIZE
         
         let local_x = world_x % CHUNK_SIZE
+        let local_y = world_y % CHUNK_SIZE
         let local_z = world_z % CHUNK_SIZE
         
         if (world_y < 0 or world_y >= WORLD_HEIGHT or
@@ -125,6 +126,7 @@ class World:
         let chunk_z = world_z // CHUNK_SIZE
         
         let local_x = world_x % CHUNK_SIZE
+        let local_y = world_y % CHUNK_SIZE
         let local_z = world_z % CHUNK_SIZE
         
         if (world_y >= 0 and world_y < WORLD_HEIGHT and
@@ -237,8 +239,8 @@ class Player:
         # Check collision with blocks
         let min_x = floor(new_position.x - self.width / 2)
         let max_x = floor(new_position.x + self.width / 2)
-        let min_y = floor(new_position.y)
-        let max_y = floor(new_position.y + self.height)
+        let min_y = floor(new_position.y - self.width / 2)
+        let max_y = floor(new_position.y + self.width / 2)
         let min_z = floor(new_position.z - self.width / 2)
         let max_z = floor(new_position.z + self.width / 2)
         
